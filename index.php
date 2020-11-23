@@ -34,9 +34,47 @@
 
 				<div class="col-6 container" style="padding-left: 150px;">
 
+				<?php
+
+					if (isset($_GET['error'])) {
+
+						if ($_GET['error'] == "sqlerror") {
+							
+							echo '
+
+								<div class="alert alert-danger">There has been an error connecting to the database. Please try again later!</div>
+
+							';
+
+						}
+
+						else if ($_GET['error'] == "wrongpwd") {
+							
+							echo '
+
+								<div class="alert alert-danger">You entered a wrong password!</div>
+
+							';
+
+						}
+
+						else if ($_GET['error'] == "nouser") {
+							
+							echo '
+
+								<div class="alert alert-danger">There is no user with this username.</div>
+
+							';
+
+						}
+
+					}
+
+				?>
+
 					<div class="pb-4 pt-5" style="padding-left: 110px; font-weight: bold; font-size: 24px; font-family: serif; color: indigo">LOGIN</div>
 
-					<form action="includes/login.inc.php" class="needs-validation">
+					<form action="includes/login.inc.php" method="post" class="needs-validation">
 						<script src="includes/form-validation.js"></script>
 
 						<label for="uname" class="pt-3">Username</label>
@@ -52,7 +90,7 @@
 						</div>
 					
 						<div class="pb-4" style="padding-left: 102px">
-							<button type="submit" class="btn btn-info w-25">Login</button>
+							<button type="submit" name="login-submit" class="btn btn-info w-25">Login</button>
 						</div>
 					
 					</form>

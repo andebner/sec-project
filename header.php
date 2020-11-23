@@ -32,7 +32,7 @@
 
 					<?php
 
-						if (isset($_SESSION['userId'])) {
+						if (isset($_SESSION['uid'])) {
 
 							echo '
 
@@ -48,10 +48,8 @@
 
 							echo '
 
-							<button class="btn btn-info" href="login.php">Login</button>
-
-							<a href="signup.php" style="color: black;">Sign Up</a>
-
+							<div>ERROR</div>
+							
 							';
 
 						}
