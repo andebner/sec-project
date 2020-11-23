@@ -28,9 +28,7 @@
 
 				<div class="col-6">
 					
-					LOGO - WELCOME
-					DESCRIPTION
-					// text - comment - find friends
+					<p>WELCOME!</p>
 
 				</div>
 
@@ -38,22 +36,29 @@
 
 					<div class="pb-4 pt-5" style="padding-left: 110px; font-weight: bold; font-size: 24px; font-family: serif; color: indigo">LOGIN</div>
 
-					<label for="uname" class="pt-3">Username</label>
-					<input type="text" name="uname" class="w-75 form-control" required>
+					<form action="includes/login.inc.php" class="needs-validation">
+						<script src="includes/form-validation.js"></script>
 
-					<label for="pwd" class="pt-3">Password</label>
-					<input type="password" name="pwd" class="w-75 form-control" required>
+						<label for="uname" class="pt-3">Username</label>
+						<input type="text" name="uname" class="w-75 form-control" required>
+						<div class="invalid-feedback">Username is required</div>
 
-					<div class="pt-3 pb-3">
-						<a href="resetpwd.php" class="w-50" style="color: mediumpurple">Forgot your password?</a>
-					</div>
+						<label for="pwd" class="pt-3">Password</label>
+						<input type="password" name="pwd" class="w-75 form-control" required>
+						<div class="invalid-feedback">Password is required</div>
+
+						<div class="pt-3 pb-3">
+							<a href="resetpwd.php" class="w-50" style="color: mediumpurple">Forgot your password?</a>
+						</div>
 					
-					<div class="pb-4" style="padding-left: 102px">
-						<button type="submit" class="btn btn-info w-25">Login</button>
-					</div>
+						<div class="pb-4" style="padding-left: 102px">
+							<button type="submit" class="btn btn-info w-25">Login</button>
+						</div>
+					
+					</form>
 					
 					<div style="padding-left: 100px">
-						<button href="signin.php" class="btn btn-outline-info w-30">Sign Up</button>
+						<a href="signup.php" class="btn btn-outline-info w-30">Sign Up</a>
 					</div>
 					
 				</div>
