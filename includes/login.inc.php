@@ -28,8 +28,7 @@
 						
 					session_start();
 
-					$_SESSION['uId'] = $row['uid'];
-					$_SESSION['uName'] = $row['username'];
+					$_SESSION['uName'] = $uname;
 
 					header("Location: ../main.php");
 

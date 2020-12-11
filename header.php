@@ -32,7 +32,7 @@
 
 					<?php
 
-						if (isset($_SESSION['uid'])) {
+						if (isset($_SESSION['uName'])) {
 
 							echo '
 
@@ -48,7 +48,7 @@
 
 							echo '
 
-							<div>ERROR</div>
+								<div>ERROR</div>
 							
 							';
 

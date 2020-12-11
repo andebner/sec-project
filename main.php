@@ -1,3 +1,10 @@
+<?php
+	
+	require "header.php"
+
+?>
+
+
 <p>connection successful</p>
 
 
