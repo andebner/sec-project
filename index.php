@@ -58,23 +58,21 @@
 
 						}
 
-						else if ($_GET['error'] == "nouser") {
+					} else if(isset($_GET['signup'])) {
 							
 							echo '
 
-								<div class="alert alert-danger">There is no user with this username.</div>
+								<div class="alert alert-success">You have successfully signed up.</div>
 
 							';
 
 						}
 
-					}
-
 				?>
 
 					<div class="pb-4 pt-5" style="padding-left: 110px; font-weight: bold; font-size: 24px; font-family: serif; color: indigo">LOGIN</div>
 
-					<form action="includes/login.inc.php" method="post" class="needs-validation">
+					<form action="includes/login.inc.php" method="POST" class="needs-validation">
 						<script src="includes/form-validation.js"></script>
 
 						<label for="uname" class="pt-3">Username</label>

@@ -30,9 +30,37 @@
 
 		<main style="background-color: lavender;" class="container h-90">
 
+			<?php 
+
+				if (isset($_GET['error'])) {
+
+					if ($_GET['error'] == "sqlerror") {
+							
+						echo '
+
+							<div class="alert alert-danger">There has been an error connecting to the database. Please try again later!</div>';
+
+					} else if ($_GET['error'] == "sqlerror2") {
+							
+						echo '
+
+							<div class="alert alert-danger">There has been an error connecting to the database. Please try again later!</div>';
+
+					} else if ($_GET['error'] == "usertaken") {
+							
+						echo '
+
+							<div class="alert alert-danger">The username has already been taken!</div>';
+
+					}
+
+				}
+
+			?>
+
 			<div class="d-flex justify-content-center align-items-center container">
 
-				<form action="includes/signup.inc.php" class="needs-validation">
+				<form action="includes/signup.inc.php" method="POST" class="needs-validation">
 					<script src="includes/form-validation.js"></script>
 	
 					<div class="form-group">
@@ -66,7 +94,7 @@
 	   				</div>
 	   			
 	   				<div class="form-group text-center">
-	   					<button type="submit" class="btn btn-info" >Submit</button>
+	   					<button type="submit" name="signup-submit" class="btn btn-info" >Submit</button>
 	   				</div>
 
 	   				<div class="pb-2 text-center">
