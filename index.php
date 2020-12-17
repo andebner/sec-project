@@ -28,6 +28,7 @@
 
 				<div class="col-sm-6" align="center">
 					
+					<img src="LOGO.png" width="90%" height="40%">
 					<p>WELCOME!</p>
 
 				</div>
