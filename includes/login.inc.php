@@ -28,7 +28,7 @@
 						
 					session_start();
 
-					$_SESSION['uName'] = $uname;
+					$_SESSION['uName'] = $_POST['uname'];
 
 					header("Location: ../main.php");
 

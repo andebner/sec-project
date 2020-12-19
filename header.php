@@ -20,13 +20,13 @@
 	
 	</head>
 	
-	<body>
+	<body style="height: 100%;">
 
 		<header>
 			
 			<nav class="navbar navbar-dark justify-content-between" style="background-color: darkmagenta;">
 
-				<a href="index.php" class="nav-link" style="color: lightcyan;">Home</a>
+				<a href="main.php" class="nav-link" style="color: lightcyan;">Home</a>
 				
 				<div>
 
@@ -37,7 +37,7 @@
 							echo '
 
 								<form action="includes/logout.inc.php" method="post" class="form-inline pr-3">
-									<button  class="btn btn-danger" type="submit" name="logout-submit">Logout</button>
+									<button  class="btn btn-outline-danger" type="submit" name="logout-submit">Logout</button>
 								</form>
 
 								';

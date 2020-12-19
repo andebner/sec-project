@@ -4,7 +4,7 @@
 
 ?>
 
-<main class="pt-5 container text-center">
+<main class="pt-5 container text-center" style="padding-bottom: 100px;">
 
 	<div class="row">
 
@@ -18,7 +18,7 @@
 					<textarea rows="10" name="msgtext" class="form-control"></textarea>
 				
 				<div class="pt-4 pb-3">
-			   		<button type="submit" class="btn btn-info" >Send</button>
+			   		<button type="submit" name="send-message" class="btn btn-info" >Send</button>
 			   	</div>
 
 			</form>
