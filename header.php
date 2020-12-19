@@ -37,7 +37,7 @@
 							echo '
 
 								<form action="includes/logout.inc.php" method="post" class="form-inline pr-3">
-									<button  class="btn btn-outline-danger" type="submit" name="logout-submit">Logout</button>
+									<button  class="btn btn-secondary" type="submit" name="logout-submit">Logout</button>
 								</form>
 
 								';

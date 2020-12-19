@@ -8,7 +8,7 @@
 
 		$user = $_SESSION['uName'];
 		$cmt = $_POST['cmttext'];
-		$msg = $_POST['msgId'];
+		$msg = $_POST['mid'];
 
 
 		$sql = "INSERT INTO comments (mid, user, comment) VALUES ('$msg', '$user', '$cmt')";
@@ -23,7 +23,7 @@
 		} else {
 
 			mysqli_stmt_execute($stmt);
-			header("Location: ../main.php?cmt=success");
+			header("Location: ../comments.php?mid=".$msg."");
 
 		}
 		

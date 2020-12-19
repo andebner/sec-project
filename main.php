@@ -1,6 +1,6 @@
 <?php
 	
-	require "header.php"
+	require "header.php";
 
 ?>
 
@@ -56,7 +56,15 @@
 
 				';
 
-			} 
+			} else if ($_GET['cmt'] == "loaderror") {
+
+				echo '
+
+					<div class="alert alert-danger">There has been an errror loading the comments. Please try again!</div>
+
+				';
+
+			}
 
 		}
 
@@ -95,14 +103,14 @@
 
 				  	if ($row["user"] == $_SESSION['uName']) {	
 
-						$bgr = "bubbleviola.png";
+						$bgr = "bubblethistle.png";
 						$clr = "indigo";
 						$trsl = "transform: scaleX(-1);";
 						$cmtclr = "indigo";
 				  
 				  	} else {
 
-				  		$bgr = "bubbleblue.png";
+				  		$bgr = "bubbleblued.png";
 				  		$clr = "steelblue";
 						$trsl = "";
 						$cmtclr = "indigo";
@@ -125,49 +133,14 @@
 
 						    </div>
 
-						    <div class="row pt-1" style="justify-content: center;">
+						    <form class="row pt-1" style="justify-content: center;" method="POST" action="comments.php">
 
-						    	<a style="z-index: 1" id="cmtbtn" onclick="comment()">Comment</a>
-						    </div>
+						    	<input name="mid" type="text" value="'.$row["mid"].'" hidden></input>
+						    	<button style="z-index: 1; color: ivory;" type="submit">Show Comments</button>
 
-						    <div class="row pb-2" style="justify-content: center;">
-
-						    	<form id="cmtform" action="includes/comment.inc.php" method="post" hidden>
-
-						    		<div name="msgId" hidden>'.$row["mid"].'</div>
-				
-									<label for="cmttext" style="color: '.$cmtclr.'">@'.$_SESSION["uName"].'</label>
-									<textarea rows="3" name="cmttext" class="form-control"></textarea>
-								
-									<div class="pt-4 pb-3">
-								   		<button type="submit" name="send-comment" class="btn btn-info" >Send</button>
-								   	</div>
-
-								</form>
-
-						    </div>
-
-						    <script>
-
-								function comment() {
-
-							    if(document.getElementById("cmtform").hidden == true) {
-
-							 		  document.getElementById("cmtform").hidden = false;
-
-							    } else {
-
-							      document.getElementById("cmtform").hidden = true;
-
-							    }
-							    
-							  }
-
-							</script>
+						    </form>
 
 					    ';
-
-				  	
 
 				  }
 
@@ -190,6 +163,6 @@
 
 <?php
 
-	require "footer.php"
+	require "footer.php";
 
 ?>
