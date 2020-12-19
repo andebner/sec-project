@@ -56,6 +56,14 @@
 
 							';
 
+						} else if ($_GET['error'] == "nouser") {
+							
+							echo '
+
+								<div class="alert alert-danger">There is no user with this username!</div>
+
+							';
+
 						}
 
 					} else if(isset($_GET['signup'])) {

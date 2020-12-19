@@ -8,7 +8,7 @@
 		$pwd = $_POST['pwd'];
 
 
-			$sql = "SELECT password FROM users WHERE username = '$uname'";
+			$sql = "SELECT * FROM users WHERE username = '$uname'";
 
 			$stmt = mysqli_stmt_init($conn);
 
@@ -24,14 +24,17 @@
 
 				$result = mysqli_stmt_get_result($stmt);
 
-				if ($result = $pwd) {
+			if (mysqli_num_rows($result) > 0) {
+
+				$row = mysqli_fetch_assoc($result);
+
+				if ($row['password'] == $pwd) {
 						
 					session_start();
 
 					$_SESSION['uName'] = $_POST['uname'];
 
 					header("Location: ../main.php");
-
 					exit();
 
 				} else {
@@ -42,7 +45,15 @@
 
 				}
 
+			} else {
+
+				header("Location: ../index.php?error=nouser");
+
+				exit();
+
 			}
+
+		}
 
 	}
 

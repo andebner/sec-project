@@ -75,7 +75,7 @@
 
 	</div>
 	
-	<div class="pt-5" style="text-align: center;">
+	<div class="pt-5">
 
 		<?php
 			
@@ -107,6 +107,7 @@
 						$clr = "indigo";
 						$trsl = "transform: scaleX(-1);";
 						$cmtclr = "indigo";
+						$mgn = "margin-left: 5%; padding-right: 5%; padding-bottom: 5%; padding-top: 5%; align-items: center;";
 				  
 				  	} else {
 
@@ -114,6 +115,7 @@
 				  		$clr = "steelblue";
 						$trsl = "";
 						$cmtclr = "indigo";
+						$mgn = "margin-right: 5%; margin-left: 25%;  padding-bottom: 5%; padding-top: 5%;";
 
 				  	}
 
@@ -123,9 +125,10 @@
 
 						    	<div class="col-sm-12">
 
-						    		<div style="background-image: url('.$bgr.'); min-height: 100px; height: 150%; min-width: 500px; background-position: center; background-repeat: no-repeat; background-size: 100% 100%;'.$trsl.'">
+						    		<div style="background-image: url('.$bgr.'); min-height: 60px; height: 150%; min-width: 500px; background-position: center; background-repeat: no-repeat; background-size: 100% 100%;'.$trsl.'">
 
-						    			<div style="display: flex; flex-direction: column; height: 100%; width: 100%; justify-content: center; '.$trsl.'">'.$row["message"].' <div style="color: '.$clr.';">@'.$row["user"].'</div></div>
+						    			<div style="display: flex; flex-direction: column; height: 100%;
+						    			width: 70%; justify-content: center;  overflow: auto; '.$mgn.' '.$trsl.'">'.$row["message"].' <div style="padding-bottom: 5%; color: '.$clr.';">@'.$row["user"].'</div></div>
 						    			
 						    		</div>
 						    		
@@ -133,10 +136,10 @@
 
 						    </div>
 
-						    <form class="row pt-1" style="justify-content: center;" method="POST" action="comments.php">
+						    <form class="row" style="justify-content: center;" method="POST" action="comments.php">
 
 						    	<input name="mid" type="text" value="'.$row["mid"].'" hidden></input>
-						    	<button style="z-index: 1; color: ivory;" type="submit">Show Comments</button>
+						    	<button style="z-index: 1; color: dimgray;" type="submit" class="btn btn-link">Show Comments</button>
 
 						    </form>
 
