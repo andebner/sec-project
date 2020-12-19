@@ -22,42 +22,74 @@
 
 		</header>
 
-		<main style="background-color: lavender; height: 500px;" class="container">
+		<main style="background-color: lavender; height: 100%;" class="container">
 			
 			<div class="row">
 
-				<div class="col-6">
+				<div class="col-sm-6 my-auto" align="center">
 					
-					<p>WELCOME!</p>
+					<img src="LOGO.png" width="auto" height="auto" style="max-height: 100%; max-width: 100%;">
 
 				</div>
 
-				<div class="col-6 container" style="padding-left: 150px;">
+				<div class="col-sm-6 container my-auto" align="center">
 
-					<div class="pb-4 pt-5" style="padding-left: 110px; font-weight: bold; font-size: 24px; font-family: serif; color: indigo">LOGIN</div>
+				<?php
 
-					<form action="includes/login.inc.php" class="needs-validation">
+					if (isset($_GET['error'])) {
+
+						if ($_GET['error'] == "sqlerror") {
+							
+							echo '
+
+								<div class="alert alert-danger">There has been an error connecting to the database. Please try again later!</div>
+
+							';
+
+						}
+
+						else if ($_GET['error'] == "wrongpwd") {
+							
+							echo '
+
+								<div class="alert alert-danger">You entered a wrong password!</div>
+
+							';
+
+						}
+
+					} else if(isset($_GET['signup'])) {
+							
+							echo '
+
+								<div class="alert alert-success">You have successfully signed up.</div>
+
+							';
+
+						}
+
+				?>
+
+					<div class="pb-4 pt-3" style="font-weight: bold; font-size: 24px; font-family: serif; color: indigo">LOGIN</div>
+
+					<form action="includes/login.inc.php" method="POST" class="needs-validation">
 						<script src="includes/form-validation.js"></script>
 
 						<label for="uname" class="pt-3">Username</label>
-						<input type="text" name="uname" class="w-75 form-control" required>
+						<input type="text" name="uname" class="w-50 form-control" required>
 						<div class="invalid-feedback">Username is required</div>
 
 						<label for="pwd" class="pt-3">Password</label>
-						<input type="password" name="pwd" class="w-75 form-control" required>
+						<input type="password" name="pwd" class="w-50 form-control" required>
 						<div class="invalid-feedback">Password is required</div>
-
-						<div class="pt-3 pb-3">
-							<a href="resetpwd.php" class="w-50" style="color: mediumpurple">Forgot your password?</a>
-						</div>
 					
-						<div class="pb-4" style="padding-left: 102px">
-							<button type="submit" class="btn btn-info w-25">Login</button>
+						<div class="pb-4 pt-3">
+							<button type="submit" name="login-submit" class="btn btn-info w-25">Login</button>
 						</div>
 					
 					</form>
 					
-					<div style="padding-left: 100px">
+					<div class="pb-4">
 						<a href="signup.php" class="btn btn-outline-info w-30">Sign Up</a>
 					</div>
 					
@@ -67,8 +99,8 @@
 
 		</main>
 
-<?php
+		<footer class="pt-5" style="text-align: center; width: 100%; bottom: 0;">
+	
+				<div>&copy 2020 - DREAM TEAM</div>
 
-	require "footer.php"
-
-?>
+		</footer>

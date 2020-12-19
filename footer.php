@@ -1,5 +1,5 @@
 
-		<footer style="position: absolute; bottom: 0; width: 100%; text-align: center;" class="pt-4">
+		<footer class="pt-5" style="text-align: center; width: 100%; bottom: 0;">
 	
 				<div>&copy 2020 - DREAM TEAM</div>
 
