@@ -8,42 +8,20 @@
 		$pwd = $_POST['pwd'];
 
 
-			$sql = "SELECT * FROM users WHERE username = '$uname'";
+			$sql = "SELECT * FROM users WHERE username = '$uname' AND password = '$pwd'";
 
-			$stmt = mysqli_stmt_init($conn);
+			$result = mysqli_query($conn, $sql) or die(mysql_error());
+			$rows = mysqli_num_rows($result);
 
-			if (!mysqli_stmt_prepare($stmt, $sql)) {
-				
-				header("Location: ../index.php?error=sqlerror");
+			if($rows > 0) {
 
+				session_start();
+
+				$_SESSION['uName'] = $_POST['uname'];
+
+				header("Location: ../main.php");
 				exit();
 
-			} else {
-
-				mysqli_stmt_execute($stmt);
-
-				$result = mysqli_stmt_get_result($stmt);
-
-			if (mysqli_num_rows($result) > 0) {
-
-				$row = mysqli_fetch_assoc($result);
-
-				if ($row['password'] == $pwd) {
-						
-					session_start();
-
-					$_SESSION['uName'] = $_POST['uname'];
-
-					header("Location: ../main.php");
-					exit();
-
-				} else {
-
-					header("Location: ../index.php?error=wrongpwd");
-
-					exit();
-
-				}
 
 			} else {
 
@@ -53,11 +31,7 @@
 
 			}
 
-		}
-
-	}
-
-	else {
+	} else {
 
 		header("Location: ../index.php");
 
