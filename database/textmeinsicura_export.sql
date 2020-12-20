@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 20. Dez 2020 um 19:51
+-- Erstellungszeit: 20. Dez 2020 um 21:58
 -- Server-Version: 10.4.11-MariaDB
 -- PHP-Version: 7.4.5
 
@@ -40,8 +40,7 @@ CREATE TABLE `comments` (
 
 INSERT INTO `comments` (`cid`, `mid`, `user`, `comment`) VALUES
 (1, 1, 'sapr', 'Ciao Luca! Sono Sara.'),
-(2, 2, 'sabi', 'Piacere, anche io mi chiamo Sara!'),
-(3, 1, '1', '<script>alert(\"XSS attack example in comments!\")</script>');
+(2, 2, 'sabi', 'Piacere, anche io mi chiamo Sara!');
 
 -- --------------------------------------------------------
 
@@ -62,8 +61,7 @@ CREATE TABLE `messages` (
 INSERT INTO `messages` (`mid`, `user`, `message`) VALUES
 (1, 'lubi', 'Ciao, mi chiamo Luca Bianchi e questo é il mio primo messaggio!'),
 (2, 'sapr', 'Sono Sara e ho 22 anni!'),
-(4, 'sabi', 'Ciao, sono Sara e vengo da Londra!'),
-(5, '1', '<script>alert(\"XSS attack example\")</script>');
+(4, 'sabi', 'Ciao, sono Sara e vengo da Londra!');
 
 -- --------------------------------------------------------
 
