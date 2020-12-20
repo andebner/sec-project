@@ -11,6 +11,7 @@
 			$sql = "SELECT * FROM users WHERE username = '$uname' AND password = '$pwd'";
 
 			$result = mysqli_query($conn, $sql) or die(mysql_error());
+			
 			$rows = mysqli_num_rows($result);
 
 			if($rows > 0) {

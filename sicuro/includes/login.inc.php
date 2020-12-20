@@ -32,7 +32,7 @@
 
 				if ($pwdCheck == false) {
 					
-					header("Location: ../index.php?error=wrongpwd1");
+					header("Location: ../index.php?error=wrongpwd");
 
 					exit();
 
