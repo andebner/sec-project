@@ -10,8 +10,6 @@
 		$cmt = htmlspecialchars($_POST['cmttext']);
 		$msg = $_POST['mid'];
 
-		if (preg_match("/^[a-zA-Z0-9]*$/", $cmt)) {
-
 			$sql = "INSERT INTO comments (mid, user, comment) VALUES ('$msg', '$user', '$cmt')";
 
 			$stmt = mysqli_stmt_init($conn);
@@ -30,18 +28,6 @@
 				exit();
 
 			}
-
-
-		} else {
-
-			header("Location: ../main.php?cmt=error");
-			exit();
-
-		}
-
-
-
-		
 		
 
 	}

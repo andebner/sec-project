@@ -87,7 +87,7 @@
 
 			if (!mysqli_stmt_prepare($stmt, $sql)) {
 
-				header("Location: ../main.php?send=loaderror");
+				header("Location: main.php?send=loaderror");
 				exit();
 
 			} else {
@@ -149,8 +149,7 @@
 
 				} else {
 
-					header("Location: ../main.php?send=loaderror");
-					exit();
+					echo "<div>Be the first to send a message!</div>";
 
 				}
 

@@ -7,9 +7,7 @@
 		require 'dbconnection.php';
 
 		$user = $_SESSION['uName'];
-		$msg = $_POST['msgtext'];
-
-		if (preg_match("/^[a-zA-Z0-9]*$/", $msg)) {
+		$msg = htmlspecialchars($_POST['msgtext']);
 			
 			$sql = "INSERT INTO messages (user, message) VALUES ('$user', '$msg')";
 
@@ -26,17 +24,5 @@
 				header("Location: ../main.php?send=success");
 
 			}
-
-
-		} else {
-
-			header("Location: ../main.php?send=error");
-			exit();
-
-		}
-
-
-		
-		
 
 	}

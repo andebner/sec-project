@@ -149,8 +149,7 @@
 
 				} else {
 
-					header("Location: ../main.php?send=loaderror");
-					exit();
+					echo "<div>Be the first to send a message!</div>";
 
 				}
 
